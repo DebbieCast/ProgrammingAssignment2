@@ -1,5 +1,6 @@
 ## 1st part creates the empty matrix that will receive the values
 
+##We have 3 arguments: x1 the vector for the matrix, and x2 and x3 for the matrix dims
 
 makeCacheMatrix <- function(x1 = numeric(), x2 = numeric(), x3 = numeric()) {
             i <- NULL               ## inversion is an empty variable for now
