@@ -1,7 +1,5 @@
-## Put comments here that give an overall description of what your
-## functions do
+## 1st part creates the empty matrix that will receive the values
 
-## Write a short comment describing this function
 
 makeCacheMatrix <- function(x = matrix()) {
             i <- NULL               ## inversion is an empty variable for now
@@ -16,10 +14,19 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## The 2nd part solves the matrix inverse if its not calculated before
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+        i <- x$getinverse()
+        if(!is.null(i)) {   ##This makes sure that the matrix inverse was not 
+                            ##previously calculated
+                    message("getting cached data")
+                    return(i)
+        }
+        data <- x$get()  ##Retrieving matrix value
+        i <- solve(data, ...)  ##Solving the inverse of the matrix
+        x$setinverse(i)
+        i
 }
 
 
