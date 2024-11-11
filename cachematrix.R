@@ -1,15 +1,16 @@
 ## 1st part creates the empty matrix that will receive the values
 
 
-makeCacheMatrix <- function(x1 = numeric(), y1 = numeric()) {
+makeCacheMatrix <- function(x1 = numeric(), x2 = numeric(), x3 = numeric()) {
             i <- NULL               ## inversion is an empty variable for now
-            set <- function(x2, y2) {    ## Setting the value of the matrix
-                        x1 <<- x2
-                        y1 <<- y2
+            set <- function(y1, y2, y3) {    ## Setting the value of the matrix
+                        x1 <<- y1
+                        x2 <<- y2
+                        x3 <<- y3
                         i <<- NULL
             }
-            if(length(x1)== length(y1)){
-                        z <- rbind(x1,y1)
+            if(x2 == x3){
+                        z <- matrix(x1, nrow = x2, ncol = x3)
                         get <- function()    z ##Get the value of the matrix
                         setinverse <- function(solve) i <<- solve       ##Set the value of inverse
                         getinverse <- function()   i  ##Get the inverse matrix
